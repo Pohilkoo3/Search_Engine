@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+<h1 style="color: blue">Hello Oleg. You can do it.</h1>
+<form th:action="@{/index}">
+    <button th:type="submit"  th:text="'Начать индексацию.'"></button>
+</form>
+<br>
+<form th:action="@{/stop}">
+    <button th:type="submit"  th:text="'Остановить индексацию.'"></button>
+</form>
+<p th:text="'Проиндексировано ' + ${countIndexPages} + ' страниц.'"></p>
+<br>
+<div th:if="${isInterrupt}">
+    <div th:text="${messageInterrupt}"></div>
+</div>
+
+</body>
+</html>
